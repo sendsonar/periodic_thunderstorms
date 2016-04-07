@@ -1,6 +1,6 @@
 module PeriodicThunderstorms
   module Components
-    module Platforms
+    module Platform
       # Elements builder APIs
       module ElementsBuilder
         def self.included(base) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
