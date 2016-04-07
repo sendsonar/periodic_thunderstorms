@@ -3,7 +3,7 @@ module PeriodicThunderstorms
     module Platform
       # Organizations api
       module Organizations
-        def self.included(base) # rubocop:disable Metrics/MethodLength
+        def self.included(base) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
           base.class_eval do
             # Delete the default transformation for an element within an
             # organization. The key field denotes the element being referenced
