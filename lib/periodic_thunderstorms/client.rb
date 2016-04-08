@@ -14,6 +14,11 @@ module PeriodicThunderstorms
       include Object.const_get("PeriodicThunderstorms::Components::Platform::#{const}")
     end
 
+    # Hub includes
+    %w(Crm).each do |const|
+      include Object.const_get("PeriodicThunderstorms::Components::Hub::#{const}")
+    end
+
     include PeriodicThunderstorms::Components::Elements
 
     def initialize(auth)
