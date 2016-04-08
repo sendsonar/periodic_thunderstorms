@@ -1,7 +1,7 @@
 module PeriodicThunderstorms
   # CloudElements client
   class Client < ::HttpApiBuilder::BaseClient
-    include PeriodicThunderstorms::MockHttpClient
+    include PeriodicThunderstorms::HttpClient
 
     attr_accessor :auth
 
