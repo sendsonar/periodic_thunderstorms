@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry-stack_explorer'
   spec.add_development_dependency 'pry-rescue'
 
-  spec.add_dependency 'http_api_builder'
+  spec.add_dependency 'http_api_builder', '~> 0.2.1'
   spec.add_dependency 'http'
   spec.add_dependency 'require_all'
 end
