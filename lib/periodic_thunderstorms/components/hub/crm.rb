@@ -5,7 +5,7 @@ module PeriodicThunderstorms
       module Crm
         def self.included(base) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
           base.class_eval do
-            get_params = %i(page pageSize where includeDeleted)
+            get_params = %i(page pageSize where includeDeleted orderCount returnTotalCount)
             # Find accounts in the CRM system, using the provided CEQL search
             # expression. The search expression in CEQL is the WHERE clause in a
             # typical SQL query, but without the WHERE keyword. For example, to
@@ -201,6 +201,14 @@ module PeriodicThunderstorms
             # will be left alone.Updating an object with a specified ID that does
             # not exist will result in an error response.
             patch 'hubs/crm/:object/:id', as: :sync_crm_object
+
+            # Contact Activities
+            post 'hubs/crm/contacts/:contact_id/activities', as: :create_crm_contact_activity
+            get 'hubs/crm/contacts/:contact_id/activities', as: :crm_contact_activities, params: { optional: get_params }
+            get 'hubs/crm/contacts/:contact_id/activities/:activity_id', as: :crm_contact_activity
+            patch 'hubs/crm/contacts/:contact_id/activities/:activity_id', as: :update_crm_contact_activity
+            delete 'hubs/crm/contacts/:contact_id/activities/:activity_id', as: :delete_crm_contact_activity
+
           end
         end
       end
