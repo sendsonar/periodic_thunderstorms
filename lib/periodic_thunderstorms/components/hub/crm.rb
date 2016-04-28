@@ -207,8 +207,14 @@ module PeriodicThunderstorms
             get 'hubs/crm/contacts/:contact_id/activities', as: :crm_contact_activities, params: { optional: get_params }
             get 'hubs/crm/contacts/:contact_id/activities/:activity_id', as: :crm_contact_activity
             patch 'hubs/crm/contacts/:contact_id/activities/:activity_id', as: :update_crm_contact_activity
-            delete 'hubs/crm/contacts/:contact_id/activities/:activity_id', as: :delete_crm_contact_activity
+            delete 'hubs/crm/contacts/:contact_id/activities/:activity_id', as: :update_crm_contact_activity
 
+            # Contact Tasks
+            post 'hubs/crm/contacts/:contact_id/tasks', as: :create_crm_task
+            get 'hubs/crm/contacts/:contact_id/tasks', as: :crm_tasks, params: { optional: get_params }
+            get 'hubs/crm/contacts/:contact_id/tasks/:task_id', as: :crm_task
+            patch 'hubs/crm/contacts/:contact_id/tasks/:task_id', as: :update_crm_task
+            delete 'hubs/crm/contacts/:contact_id/tasks/:task_id', as: :delete_crm_task
           end
         end
       end
