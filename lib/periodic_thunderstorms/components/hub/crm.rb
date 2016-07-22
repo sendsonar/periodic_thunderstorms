@@ -5,7 +5,7 @@ module PeriodicThunderstorms
       module Crm
         def self.included(base) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
           base.class_eval do
-            get_params = %i(page pageSize where includeDeleted orderCount returnTotalCount)
+            get_params = %i(page pageSize where includeDeleted orderBy returnTotalCount)
             # Find accounts in the CRM system, using the provided CEQL search
             # expression. The search expression in CEQL is the WHERE clause in a
             # typical SQL query, but without the WHERE keyword. For example, to
